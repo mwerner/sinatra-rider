@@ -15,26 +15,28 @@ require 'sinatra/rider/asset_pipeline'
 
 module Sinatra
   module Rider
-    def self.root=(path)
-      @root = path
-    end
-
-    def self.root
-      @root
-    end
-
     def self.registered(app)
-      Sinatra::Rider.root = root = app.settings.root
-      app.set :database_file, File.join(Sinatra::Rider.root, "config/database.yml").to_s
+      caller = Kernel.caller_locations.detect { |file| file.absolute_path =~ /config\.ru/ }
+      Sinatra::Rider.root = Pathname.new(caller.absolute_path).dirname
 
       %w(app lib).map do |path|
-        Dir.glob("#{File.join(root, path)}/*.rb").each { |file| require file }
+        Dir.glob("#{File.join(Sinatra::Rider.root, path)}/*.rb").each { |file| require file }
       end
 
       app.register Sinatra::ActiveRecordExtension
       app.register Sinatra::Rider::Authentication
       app.register Sinatra::Rider::AssetPipeline
       app.register Sinatra::Rider::Configuration
+
+      app.set :database_file, File.join(Sinatra::Rider.root, "config/database.yml").to_s
+    end
+
+    def self.root=(path)
+      @@root = path
+    end
+
+    def self.root
+      @@root
     end
   end
 end
