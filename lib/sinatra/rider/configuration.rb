@@ -11,13 +11,13 @@ module Sinatra
           app.register Sinatra::Reloader
 
           %w(app lib).each do |dir|
-            Dir.glob("#{File.join(Sinatra::Rider.root, dir)}/*.rb").each do |file|
+            Dir.glob("#{File.join(app.root, dir)}/*.rb").each do |file|
               app.also_reload file
             end
           end
 
           app.use BetterErrors::Middleware
-          BetterErrors.application_root = Sinatra::Rider.root
+          BetterErrors.application_root = app.root
         end
       end
     end

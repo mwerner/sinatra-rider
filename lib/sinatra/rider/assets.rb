@@ -5,7 +5,7 @@ require 'execjs'
 
 module Sinatra
   module Rider
-    module AssetPipeline
+    module Assets
       def self.registered(app)
         app.set :pipeline, Sprockets::Environment.new
 
