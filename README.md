@@ -10,7 +10,7 @@ All the nice extras Sinatra likes to have when he's on the road.
 - Dotenv
 - Better Errors
 - Autoloading `app` and `lib` directories
-- ~One dozen blue M&Ms~
+- ~~One dozen blue M&Ms~~
 
 ## Installation
 
