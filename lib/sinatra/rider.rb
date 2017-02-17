@@ -15,6 +15,8 @@ require 'sinatra/rider/version'
 module Sinatra
   module Rider
     def self.registered(app)
+      app.set :database_file, File.join(app.root, "config/database.yml").to_s
+
       %w(app lib).map do |path|
         Dir.glob("#{File.join(app.root, path)}/*.rb").each { |file| require file }
       end
@@ -24,8 +26,6 @@ module Sinatra
       app.register Sinatra::Rider::Authentication
       app.register Sinatra::Rider::Configuration
       app.register Sinatra::Rider::Pathing
-
-      app.set :database_file, File.join(app.root, "config/database.yml").to_s
     end
   end
 end
