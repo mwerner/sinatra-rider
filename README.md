@@ -22,7 +22,7 @@ gem 'sinatra-rider'
 
 Then require it at the top of your server file and register the rider in Sinatra.
 
-```
+```ruby
 require 'sinatra/rider'
 class Server < Sinatra::Base
   register Sinatra::Rider
@@ -54,7 +54,7 @@ Warden is used for authentication. `Sinatra::Rider` sets up Sinatra with `/login
 
 You can require authentication for an endpoint by including `authorize!` in sinatra's endpoint block
 
-```
+```ruby
 get '/' do
   authorize!
   erb :index
@@ -67,11 +67,13 @@ end
 
 Sass is handled by Sprockets. `Sinatra::Rider` looks for any assets in `assets/stylesheets` and `assets/javascripts` and compiles them as requested.
 
-```
+```scss
 # assets/stylesheets/application.scss
 //= require_tree ./vendor
 //= require base
+```
 
+```html
 # views/layout.erb
 <!DOCTYPE html>
 <html>
