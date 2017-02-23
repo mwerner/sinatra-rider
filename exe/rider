@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require 'bundler/setup'
+
+require 'thor'
+require 'sinatra/rider/command'
+Sinatra::Rider::Command.start(ARGV)

@@ -14,6 +14,8 @@ require 'sinatra/rider/version'
 
 module Sinatra
   module Rider
+    autoload :User, 'sinatra/rider/user'
+
     def self.registered(app)
       app.set :database_file, File.join(app.root, "config/database.yml").to_s
 
