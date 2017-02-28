@@ -9,6 +9,7 @@ All the nice extras Sinatra likes to have when he's on the road.
 - Sass
 - Dotenv
 - Better Errors
+- Local copy of bootstrap and font-awesome
 - Autoloading `app` and `lib` directories
 - ~~One dozen blue M&Ms~~
 
@@ -97,6 +98,21 @@ Better Errors are included in the Sinatra configuration when `RACK_ENV` is in de
 
 
 [More Information](https://github.com/charliesome/better_errors)
+
+### Locally available copies of bootstrap and font-awesome
+
+`Sinatra::Rider` provides a copy of the latest Bootstrap and Font-Awesome libraries for your usage. Just add the `link` tag to your layout and you're styling!
+
+```
+<head>
+  <title>My Sinatra::Rider App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="/assets/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/assets/font-awesome.css">
+</head>
+```
+
+More Information: [Bootstrap](https://getbootstrap.com/) & [Font-Awesome](http://fontawesome.io/)
 
 ### Autoloading `app` and `lib`
 
