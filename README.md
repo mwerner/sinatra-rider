@@ -103,7 +103,7 @@ Better Errors are included in the Sinatra configuration when `RACK_ENV` is in de
 
 `Sinatra::Rider` provides a copy of the latest Bootstrap and Font-Awesome libraries for your usage. Just add the `link` tag to your layout and you're styling!
 
-```
+```html
 <head>
   <title>My Sinatra::Rider App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
