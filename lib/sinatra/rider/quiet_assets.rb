@@ -14,7 +14,7 @@ module Sinatra
 
           def call(env)
             ext = env['REQUEST_PATH'].split('.').last
-            if #{extensions.inspect}.include? ext
+            if #{extensions.inspect}.include?(ext)
               @app.call env
             else
               call_with_logging env

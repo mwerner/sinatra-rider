@@ -42,6 +42,7 @@ module Sinatra
         template('templates/layout.erb', "#{path}/views/layout.erb")
         template('templates/navigation.erb', "#{path}/views/_navigation.erb")
         template('templates/index.erb', "#{path}/views/index.erb")
+        create_file("#{path}/README.md") { "# #{path.capitalize}\n" }
       end
 
       def prepare_assets
