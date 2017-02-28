@@ -112,6 +112,10 @@ Better Errors are included in the Sinatra configuration when `RACK_ENV` is in de
 </head>
 ```
 
+Current Versions:
+- Bootstrap: 3.3.7
+- Font-Awesome: 4.7.0
+
 More Information: [Bootstrap](https://getbootstrap.com/) & [Font-Awesome](http://fontawesome.io/)
 
 ### Autoloading `app` and `lib`
