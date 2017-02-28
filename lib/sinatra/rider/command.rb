@@ -16,7 +16,7 @@ module Sinatra
       end
 
       def prepare_ruby_version
-        create_file("#{path}/.ruby-version") { "2.1.9\n" }
+        create_file("#{path}/.ruby-version") { "#{RUBY_VERSION}\n" }
       end
 
       def prepare_dotenv
