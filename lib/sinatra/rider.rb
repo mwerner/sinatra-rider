@@ -17,7 +17,7 @@ module Sinatra
     autoload :User, 'sinatra/rider/user'
 
     def self.registered(app)
-      app.set :database_file, File.join(app.root, "config/database.yml").to_s
+      app.set :database_file, File.join(app.root, 'config/database.yml').to_s
 
       %w(app lib).map do |path|
         Dir.glob("#{File.join(app.root, path)}/*.rb").each { |file| require file }

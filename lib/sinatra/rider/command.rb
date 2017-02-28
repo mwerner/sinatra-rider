@@ -52,6 +52,17 @@ module Sinatra
         template('templates/css.tt', "#{path}/assets/stylesheets/application.scss")
       end
 
+      def prepare_working_directory
+        inside(path) do
+          run('bundle install')
+          run('bundle exec rake db:create db:migrate')
+          run('git init')
+          puts "You're all set up! Start your server like this:"
+          puts "  bundle exec rackup config.ru"
+          puts "\nYou can get setup with a user at http://localhost:9292/signup"
+        end
+      end
+
       def self.source_root
         File.dirname(__FILE__)
       end

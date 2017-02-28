@@ -1,3 +1,0 @@
-#!/usr/bin/env ruby
-require 'sinatra/rider/command'
-Sinatra::Rider::Command.start(ARGV)
