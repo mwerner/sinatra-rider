@@ -38,6 +38,9 @@ module Sinatra
       end
 
       def prepare_app
+        template('templates/console.tt', "#{path}/bin/console")
+        system('chmod', '+x', "#{path}/bin/console")
+
         template('templates/user.tt', "#{path}/app/user.rb")
         template('templates/layout.erb', "#{path}/views/layout.erb")
         template('templates/navigation.erb', "#{path}/views/_navigation.erb")
