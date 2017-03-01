@@ -21,7 +21,7 @@ module Sinatra
 
       def prepare_dotenv
         create_file("#{path}/.env") { "SESSION_SECRET=super secret shh\n" }
-        create_file("#{path}/.gitignore") { ".env\n" }
+        create_file("#{path}/.gitignore") { ".env\ntmp/\n" }
       end
 
       def prepare_database
@@ -61,10 +61,14 @@ module Sinatra
           run('bundle install')
           run('bundle exec rake db:create db:migrate')
           run('git init')
-          puts "You're all set up! Start your server like this:"
-          puts "  bundle exec rackup config.ru"
-          puts "\nYou can get setup with a user at http://localhost:9292/signup"
+          run('git add .')
+          run('git commit -m "Initial Commit"')
         end
+
+        run("cd #{path}")
+        puts "You're all set up! Start your server like this:"
+        puts "  bundle exec rackup config.ru"
+        puts "\nYou can get setup with a user at http://localhost:9292/signup"
       end
 
       def self.source_root
