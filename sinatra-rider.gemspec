@@ -25,19 +25,20 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'thor'
   spec.add_dependency 'pg'
   spec.add_dependency 'dotenv'
-  spec.add_dependency 'sinatra',              '~> 1.4'
-  spec.add_dependency 'sinatra-contrib',      '~> 1.4'
-  spec.add_dependency 'sinatra-activerecord', '~> 2.0'
-  spec.add_dependency 'sinatra_warden',       '~> 1.0'
-  spec.add_dependency 'activerecord',         '~> 4.2'
+  spec.add_dependency 'sinatra',              '~> 2.1'
+  spec.add_dependency 'sinatra-contrib'
+  spec.add_dependency 'sinatra-activerecord'
+  spec.add_dependency 'sinatra_warden'
+  spec.add_dependency 'activerecord'
   spec.add_dependency 'sprockets',            '~> 3.7'
   spec.add_dependency 'sass',                 '~> 3.4'
   spec.add_dependency 'uglifier'
   spec.add_dependency 'better_errors'
   spec.add_dependency 'binding_of_caller'
 
-  spec.add_development_dependency "bundler", "~> 1.13"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "bundler", "~> 2.1"
+  spec.add_development_dependency "rake", ">= 12.3.3"
+  spec.add_development_dependency "rack-test", '~> 1.1'
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "simplecov"
 end

@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem 'sinatra-rider'
+gem 'sinatra-rider', '0.2.6', path: '/Users/matthew/src/sinatra-rider'
